@@ -6,7 +6,7 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 22:27:23 by ptavares          #+#    #+#             */
-/*   Updated: 2025/08/25 19:41:08 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/04 11:42:25 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	pa(t_node **stack_a, t_node **stack_b)
 {
 	t_node	*new_node;
 
-	if (!stack_b || !*stack_b)
+	if (!stack_a || !stack_b || !*stack_b)
 		return ;
 	new_node = *stack_b;
 	*stack_b = (*stack_b)->next;
@@ -28,7 +28,7 @@ void	pb(t_node **stack_a, t_node **stack_b)
 {
 	t_node	*new_node;
 
-	if (!stack_a || !*stack_a)
+	if (!stack_b || !stack_a || !*stack_a)
 		return ;
 	new_node = *stack_a;
 	*stack_a = (*stack_a)->next;

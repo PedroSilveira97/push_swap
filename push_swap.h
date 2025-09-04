@@ -6,10 +6,9 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 15:39:44 by ptavares          #+#    #+#             */
-/*   Updated: 2025/08/29 16:48:06 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/04 09:06:10 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -17,11 +16,13 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <limits.h>
-# include "../libft/libft.h"
+# include "libft/libft.h"
+# include "ft_printf.h"
 
 typedef struct s_node
 {
 	int				value;
+	int				index;
 	struct s_node	*next;
 }	t_node;
 
