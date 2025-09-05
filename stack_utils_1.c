@@ -6,7 +6,7 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 09:32:31 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/04 11:08:18 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/05 13:02:01 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static t_node	*find_last_node(t_node *head)
 	return (head);
 }
 
-t_node	*new_node(int value)
+t_node	*ft_new_node(int value)
 {
 	t_node	*n;
 

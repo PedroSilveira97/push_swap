@@ -6,48 +6,81 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 16:48:33 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/04 09:04:15 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/05 13:02:57 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_valid_input(const char *s)
+static void	error_exit(t_node **node)
 {
-	if (s == NULL || *s == '\0')
-		return (0);
-	if (*s == '-' || *s == '+')
-		s++;
-	if (*s == '\0')
-		return (0);
-	while (*s)
-	{
-		if (*s < '0' || *s > '9')
-			return (0);
-		s++;
-	}
-	return (1);
+	write(2, "Error\n", 6);
+	if (node)
+		free_stack(node);
+	exit(1);
 }
 
-long	ft_atol(char *s)
+static int	duplicate(t_node *node, int value)
 {
-	long	sign;
-	long	value;
+	while (node)
+	{
+		if (node->value == value)
+			return (1);
+		node = node->next;
+	}
+	return (0);
+}
+
+static int	is_atoi(char *token, int *output)
+{
+	int			sign;
+	long long	value;
 
 	sign = 1;
 	value = 0;
-	while (*s == ' ' || (*s >= 9 && *s <= 13))
-		s++;
-	if (*s == '-' || *s == '+')
+	while (*token = ' ' || *token >= 9 && *token <= 13);
+		token++;
+	if (*token == '+' || *token == '-')
 	{
-		if (*s == '-')
-			sign = sign * -1;
-		s++;
+		if (*token == '-')
+			sign = -1;
+		token++;
 	}
-	while (*s >= '0' && *s <= '9')
+	if (!token || !ft_isdigit((unsigned char)*token))
+		return (0);
+	while (ft_isdigit((unsigned char)*token))
 	{
-		value = value * 10 + (*s - '0');
-		s++;
+		value = value * 10 + (*token - '0');
+		if ((sign == 1 && value > INT_MAX) || (sign == -1 && value < INT_MAX))
+			return (0);
+		token++;
 	}
-	return (value * sign);
+	if (*token != '\0')
+		return (0);
+	*output = (int)(sign * value);
+	return(1);
+}
+
+static void	parse_argument(char *token, t_node **node)
+{
+	char	**argument;
+	int		i;
+	int		value;
+	t_node	*new_node;
+	int		valid_token;
+
+	value = ft_split(token, ' ');
+	if (!value)
+		error_exit(node);
+	i = 0;
+	valid_token = 0;
+	while (argument[i])
+	{
+		valid_token = 1;
+		if ((!is_atoi(argument[i], &value)) || duplicate(node, value))
+			error_exit(node);
+		new_node = ft_new_node(value);
+		append(node, new_node);
+		i++;
+	}
 }
