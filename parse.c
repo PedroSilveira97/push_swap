@@ -6,7 +6,7 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 16:48:33 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/05 13:02:57 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/07 14:27:03 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,18 @@ static void	parse_argument(char *token, t_node **node)
 			error_exit(node);
 		new_node = ft_new_node(value);
 		append(node, new_node);
+		i++;
+	}
+}
+
+void	appending(int argc, char **argv, t_node **node)
+{
+	int	i;
+
+	i = 1;
+	while (i < argc)
+	{
+		parse_argument(argv[i], node);
 		i++;
 	}
 }
