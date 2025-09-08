@@ -6,7 +6,7 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 11:08:41 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/07 14:30:13 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/08 16:04:41 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	free_stack(t_node **head)
 	*head = NULL;
 }
 
-static void	free_words(char **value)
+void	free_words(char **value)
 {
 	int	i;
 

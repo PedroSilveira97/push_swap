@@ -6,7 +6,7 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 15:39:44 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/07 15:57:10 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/08 16:21:04 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,13 @@
 # include <limits.h>
 # include "libft/libft.h"
 # include "ft_printf.h"
+
+typedef struct s_node
+{
+	int				value;
+	int				index;
+	struct s_node	*next;
+}	t_node;
 
 static void	error_exit(t_node **node);
 static int	duplicate(t_node *node, int value);
@@ -40,13 +47,8 @@ void	append(t_node **head, t_node *node);
 int	stack_size(t_node *head);
 int	is_sorted(t_node *head);
 void	free_stack(t_node **head);
-static void	free_words(char **value);
+void	free_words(char **value);
 
-typedef struct s_node
-{
-	int				value;
-	int				index;
-	struct s_node	*next;
-}	t_node;
+
 
 #endif
