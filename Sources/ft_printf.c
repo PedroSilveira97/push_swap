@@ -6,12 +6,12 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 11:03:00 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/03 10:54:28 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/10 16:05:26 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "ft_printf.h"
+#include "../libft/libft.h"
+#include "../ft_printf.h"
 
 int	ft_formats(char specifier, va_list args, ...)
 {

@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   dispatcher.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 20:35:34 by ptavares          #+#    #+#             */
-/*   Updated: 2025/06/11 16:03:35 by ptavares         ###   ########.fr       */
+/*   Created: 2025/09/10 14:58:05 by ptavares          #+#    #+#             */
+/*   Updated: 2025/09/10 16:04:19 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	dispatch(t_node *stack_a, t_node *stack_b)
 {
-	unsigned char		*dest1;
-	const unsigned char	*src1;
+	int	n;
 
-	dest1 = (unsigned char *)dest;
-	src1 = (unsigned char *)src;
-	if (!dest && !src)
-		return (NULL);
-	while (n > 0)
-	{
-		*dest1 = *src1;
-		dest1++;
-		src1++;
-		n--;
-	}
-	return (dest);
+	if (is_sorted(stack_a))
+		return ;
+	n = stack_size(stack_a);
+	if (n == 2)
+		sort_two(&stack_a);
+	else if (n == 3)
+		sort_three(&stack_a);
+	else if (n == 4 || n == 5)
+		small_sort(stack_a, stack_b);
+	else
+		radix_sort(&stack_a, &stack_b);
 }

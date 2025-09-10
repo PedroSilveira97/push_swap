@@ -6,7 +6,7 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 16:48:33 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/08 16:29:16 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/10 16:09:28 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static int	is_atoi(char *token, int *output)
 
 	sign = 1;
 	value = 0;
-	while (*token == ' ' || *token >= 9 && *token <= 13)
+	while (*token == ' ' || (*token >= 9 && *token <= 13))
 		token++;
 	if (*token == '+' || *token == '-')
 	{
@@ -85,7 +85,7 @@ static void	parse_argument(char *token, t_node **node)
 	i = 0;
 	while (argument[i])
 	{
-		if ((!is_atoi(argument[i], &value)) || duplicate(node, value))
+		if ((!is_atoi(argument[i], &value)) || duplicate(*node, value))
 			error_exit(node, argument);
 		new_node = ft_new_node(value);
 		if (!new_node)

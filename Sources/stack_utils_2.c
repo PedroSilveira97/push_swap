@@ -17,19 +17,19 @@ int	stack_size(t_node *head)
 	int	n;
 
 	n = 0;
-	while(head)
+	while (head)
 	{
 		n++;
 		head = head->next;
 	}
-	return n;
+	return (n);
 }
 
 int	is_sorted(t_node *head)
 {
-	while(head && head->next)
+	while (head && head->next)
 	{
-		if(head->value > head->next->value)
+		if (head->value > head->next->value)
 			return (0);
 		head = head->next;
 	}

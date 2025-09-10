@@ -37,7 +37,7 @@ t_node	*ft_new_node(int value)
 void	push_front(t_node **head, t_node *node)
 {
 	if (!head || !node)
-		return;
+		return ;
 	node->next = *head;
 	*head = node;
 }
@@ -45,6 +45,7 @@ void	push_front(t_node **head, t_node *node)
 t_node	*detach_front(t_node **head)
 {
 	t_node	*n;
+
 	if (!head || !*head)
 		return (NULL);
 	n = *head;
@@ -58,12 +59,12 @@ void	append(t_node **head, t_node *node)
 	t_node	*last;
 
 	if (!head || !node)
-		return;
+		return ;
 	node->next = NULL;
-	if(!*head)
+	if (!*head)
 	{
 		*head = node;
-		return;
+		return ;
 	}
 	last = find_last_node(*head);
 	last->next = node;
