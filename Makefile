@@ -1,5 +1,5 @@
 NAME = push_swap.a
-
+EXEC = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
@@ -30,6 +30,7 @@ $(LIBFT_A):
 $(NAME): $(OBJ) $(LIBFT_A)
 	cp $(LIBFT_A) $(NAME)
 	ar rcs $(NAME) $(OBJ)
+	$(CC) $(CFLAGS) $(LIBFT_A) -o $(EXEC)
 
 clean:
 	rm -f $(OBJ)
