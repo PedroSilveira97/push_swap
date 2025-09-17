@@ -36,11 +36,13 @@ $(NAME): $(OBJ) $(LIBFT_A)
 
 clean:
 	rm -f $(OBJ)
-	$(MAKE) -C $(LIBFT_DIR) $(FTPRINTF_DIR) clean
+	$(MAKE) -C $(LIBFT_DIR) clean
+	$(MAKE) -C $(FTPRINTF_DIR) clean
 
 fclean: clean
 	rm -f $(NAME)
-	$(MAKE) -C $(LIBFT_DIR) $(FTPRINTF_DIR) fclean
+	$(MAKE) -C $(LIBFT_DIR) fclean
+	$(MAKE) -C $(FTPRINTF_DIR) fclean
 
 re: fclean all
 
