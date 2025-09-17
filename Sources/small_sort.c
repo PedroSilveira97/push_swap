@@ -6,7 +6,7 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 14:04:04 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/10 14:56:03 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/17 19:14:19 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,9 @@ void	sort_three(t_node **stack_a)
 	int	y;
 	int	z;
 
+	x = (*stack_a)->index;
+	y = (*stack_a)->next->index;
+	z = (*stack_a)->next->next->index;
 	if (x < y && y < z)
 		return ;
 	else if (x > y && y < z && x < z)
@@ -68,15 +71,13 @@ void	sort_three(t_node **stack_a)
 		rra(stack_a);
 }
 
-void	small_sort(t_node *stack_a, t_node *stack_b)
+void	small_sort(t_node **stack_a, t_node **stack_b)
 {
 	int	size;
 	int	pos;
-	int	pulls;
 
-	size = stack_size(stack_a);
-	pulls = (size == 5);
-	pos = pos_of_min(stack_a, size);
+	size = stack_size(*stack_a);
+	pos = pos_of_min(*stack_a, size);
 	rr_min_to_top(stack_a, pos, size);
-	pb(stack_a, stack_a);
+	pb(stack_a, stack_b);
 }

@@ -6,7 +6,7 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 15:09:46 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/17 18:09:56 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/17 18:24:12 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int	main(int argc, char **argv)
 		free_stack(&stack_a);
 		return (0);
 	}
-	dispatch(stack_a, stack_a);
+	dispatch(&stack_a, &stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);

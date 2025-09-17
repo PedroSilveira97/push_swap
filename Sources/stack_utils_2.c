@@ -6,7 +6,7 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 11:08:41 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/08 16:04:41 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/17 19:08:52 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	free_stack(t_node **head)
 	t_node	*next;
 
 	if (!head)
-		return (NULL);
+		return ;
 	current = *head;
 	while (current)
 	{
