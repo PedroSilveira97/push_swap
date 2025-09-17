@@ -6,7 +6,7 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 15:45:45 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/08 15:07:17 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/17 18:11:25 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void	radix_sort(t_node **stack_a, t_node **stack_b)
 	int	max;
 	int	maxbit;
 	int	bit;
-	int	rounds;
 
 	max = max_rank(*stack_a);
 	maxbit = highest_set_bit_index(max);

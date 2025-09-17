@@ -6,7 +6,7 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 15:09:46 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/10 15:53:17 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/17 18:09:56 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	assign_indices(t_node *stack_a)
 	}
 }
 
-static int	pos_of_min(t_node *stack_a, int size)
+int	pos_of_min(t_node *stack_a, int size)
 {
 	int		pos;
 	int		best_pos;

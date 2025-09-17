@@ -6,7 +6,7 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 15:29:24 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/03 09:27:54 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/17 18:15:50 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	rrb(t_node **stack)
 		return ;
 	second_last = *stack;
 	while (second_last->next->next)
-		second_last->next;
+		second_last = second_last->next;
 	last = second_last->next;
 	second_last->next = NULL;
 	last->next = *stack;
