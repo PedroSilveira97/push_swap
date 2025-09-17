@@ -4,7 +4,6 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRC_DIR = .
 SRC =	$(SRC_DIR)/Sources/dispatcher.c \
-		$(SRC_DIR)/Sources/ft_printf.c \
 		$(SRC_DIR)/Sources/parse.c \
 		$(SRC_DIR)/Sources/push_swap.c \
 		$(SRC_DIR)/Sources/push.c \
@@ -33,7 +32,7 @@ $(FTPRINTF_A):
 	$(MAKE) -C $(FTPRINTF_DIR)
 
 $(NAME): $(OBJ) $(LIBFT_A)
-	$(CC) $(CFLAGS) $(LIBFT_A) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) $(LIBFT_A) -o $(NAME)
 
 clean:
 	rm -f $(OBJ)

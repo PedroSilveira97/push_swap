@@ -6,11 +6,11 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 14:04:04 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/17 19:14:19 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/17 20:28:00 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	rr_min_to_top(t_node **stack_a, int pos, int size)
 {

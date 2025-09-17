@@ -6,11 +6,11 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 15:09:46 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/17 18:24:12 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/17 20:27:35 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	assign_indices(t_node *stack_a)
 {

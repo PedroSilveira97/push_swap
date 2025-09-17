@@ -6,11 +6,11 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 09:32:31 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/05 13:02:01 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/17 20:28:04 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static t_node	*find_last_node(t_node *head)
 {

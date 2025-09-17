@@ -6,11 +6,11 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 16:48:33 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/10 16:09:28 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/17 20:27:27 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	error_exit(t_node **node, char **value)
 {

@@ -6,11 +6,11 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 14:58:05 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/17 18:56:03 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/17 20:27:21 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	dispatch(t_node **stack_a, t_node **stack_b)
 {
