@@ -1,5 +1,4 @@
-NAME = push_swap.a
-EXEC = push_swap
+NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
@@ -22,15 +21,19 @@ OBJ = $(SRC:.c=.o)
 LIBFT_DIR = libft
 LIBFT_A = $(LIBFT_DIR)/libft.a
 
-all: $(LIBFT_A) $(NAME)
+FTPRINTF_DIR = ft_printf
+FTPRINTF_A = $(FTPRINTF_DIR)/ft_printf.a
+
+all: $(LIBFT_A) $(FTPRINTF_A) $(NAME)
 
 $(LIBFT_A):
 	$(MAKE) -C $(LIBFT_DIR)
 
+$(FTPRINTF_A):
+	$(MAKE) -C $(FTPRINTF_DIR)
+
 $(NAME): $(OBJ) $(LIBFT_A)
-	cp $(LIBFT_A) $(NAME)
-	ar rcs $(NAME) $(OBJ)
-	$(CC) $(CFLAGS) $(LIBFT_A) -o $(EXEC)
+	$(CC) $(CFLAGS) $(LIBFT_A) -o $(NAME)
 
 clean:
 	rm -f $(OBJ)
