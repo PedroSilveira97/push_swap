@@ -6,7 +6,7 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 15:39:44 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/18 13:41:50 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/18 14:00:55 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <limits.h>
 # include "libft/libft.h"
+# include "ft_printf/ft_printf.h"
 
 typedef struct s_node
 {

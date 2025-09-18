@@ -32,12 +32,12 @@ $(FTPRINTF_A):
 	$(MAKE) -C $(FTPRINTF_DIR)
 
 $(NAME): $(OBJ) $(LIBFT_A)
-	$(CC) $(CFLAGS) $(OBJ) $(LIBFT_A) -o $(NAME)
+	$(CC) $(CFLAGS) $(LIBFT_A) $(FTPRINTF_A) -o $(NAME)
 
 clean:
 	rm -f $(OBJ)
 	$(MAKE) -C $(LIBFT_DIR) clean
-	$(MAKE) -C $(FTPRINTF_DIR) clean
+	$(MAKE) -C $(LIBFT_DIR) clean
 
 fclean: clean
 	rm -f $(NAME)
