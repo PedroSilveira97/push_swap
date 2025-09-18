@@ -6,7 +6,7 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 14:51:39 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/18 13:42:34 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/18 14:18:47 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,22 +31,19 @@ int	rotate_stack(t_node **stack)
 		last = last->next;
 	last->next = first;
 	first->next = NULL;
-	ft_printf("ra\n");
 	return (1);
 }
 
 void	ra(t_node **stack)
 {
 	if (rotate_stack(stack))
-		return ;
-	ft_printf("ra\n");
+		ft_printf("ra\n");
 }
 
 void	rb(t_node **stack)
 {
 	if (rotate_stack(stack))
-		return ;
-	ft_printf("rb\n");
+		ft_printf("rb\n");
 }
 
 void	rr(t_node **stack_a, t_node **stack_b)
@@ -56,6 +53,6 @@ void	rr(t_node **stack_a, t_node **stack_b)
 
 	rotated_a = rotate_stack(stack_a);
 	rotated_b = rotate_stack(stack_b);
-	if (rotated_a || rotated_b)
+	if (rotated_a && rotated_b)
 		ft_printf("rr\n");
 }
