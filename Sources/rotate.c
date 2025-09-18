@@ -6,19 +6,24 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 14:51:39 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/17 20:27:55 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/18 13:42:34 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ra(t_node **stack)
+int	can_rotate(t_node **stack)
+{
+	return (stack && *stack && (*stack)->next);
+}
+
+int	rotate_stack(t_node **stack)
 {
 	t_node	*first;
 	t_node	*last;
 
-	if (!stack || !*stack || !(*stack)->next)
-		return ;
+	if (!can_rotate(stack))
+		return (0);
 	first = *stack;
 	*stack = first->next;
 	last = *stack;
@@ -26,29 +31,31 @@ void	ra(t_node **stack)
 		last = last->next;
 	last->next = first;
 	first->next = NULL;
+	ft_printf("ra\n");
+	return (1);
+}
+
+void	ra(t_node **stack)
+{
+	if (rotate_stack(stack))
+		return ;
+	ft_printf("ra\n");
 }
 
 void	rb(t_node **stack)
 {
-	t_node	*first;
-	t_node	*last;
-
-	if (!stack || !*stack || !(*stack)->next)
+	if (rotate_stack(stack))
 		return ;
-	first = *stack;
-	*stack = first->next;
-	last = *stack;
-	while (last->next)
-		last = last->next;
-	last->next = first;
-	first->next = NULL;
+	ft_printf("rb\n");
 }
 
 void	rr(t_node **stack_a, t_node **stack_b)
 {
-	if ((!stack_a || !*stack_a || !(*stack_a)->next)
-		|| (!stack_b || !*stack_b || !(*stack_b)->next))
-		return ;
-	ra(stack_a);
-	rb(stack_b);
+	int	rotated_a;
+	int	rotated_b;
+
+	rotated_a = rotate_stack(stack_a);
+	rotated_b = rotate_stack(stack_b);
+	if (rotated_a || rotated_b)
+		ft_printf("rr\n");
 }

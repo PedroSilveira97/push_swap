@@ -6,7 +6,7 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 16:48:33 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/17 20:27:27 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/18 12:20:56 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static int	is_atoi(char *token, int *output)
 		token++;
 	}
 	if (*token != '\0' || ((sign == 1 && value > INT_MAX)
-			|| (sign == -1 && value < INT_MAX)))
+			|| (sign == -1 && value < INT_MIN)))
 		return (0);
 	*output = (int)(sign * value);
 	return (1);
