@@ -6,16 +6,18 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 14:04:04 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/18 14:23:19 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/18 19:17:21 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	rr_min_to_top(t_node **stack_a, int pos, int size)
+static void	push_min_to_b(t_node **stack_a, t_node **stack_b, int size)
 {
 	int	i;
+	int	pos;
 
+	pos = pos_of_min(*stack_a, size);
 	if (pos <= size / 2)
 	{
 		i = 0;
@@ -34,6 +36,7 @@ static void	rr_min_to_top(t_node **stack_a, int pos, int size)
 			i++;
 		}
 	}
+	pb(stack_a, stack_b);
 }
 
 void	sort_two(t_node **stack_a)
@@ -74,22 +77,19 @@ void	sort_three(t_node **stack_a)
 void	small_sort(t_node **stack_a, t_node **stack_b)
 {
 	int	size;
-	int	pos;
 
 	size = stack_size(*stack_a);
 	if (size <= 1)
 		return ;
-	else if (size > 3)
+	if (size > 3)
 	{
-		pos = pos_of_min(*stack_a, size);
-		rr_min_to_top(stack_a, pos, size);
-		pb(stack_a, stack_b);
+		push_min_to_b(stack_a, stack_b, size);
 		size--;
 	}
 	if (size == 3)
 		sort_three(stack_a);
 	else if (size == 2)
 		sort_two(stack_a);
-	while (*stack_b)
+	while (stack_b)
 		pa(stack_a, stack_b);
 }
