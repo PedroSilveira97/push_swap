@@ -6,7 +6,7 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 14:04:04 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/18 19:17:21 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/18 19:25:41 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	small_sort(t_node **stack_a, t_node **stack_b)
 	size = stack_size(*stack_a);
 	if (size <= 1)
 		return ;
-	if (size > 3)
+	while (size > 3)
 	{
 		push_min_to_b(stack_a, stack_b, size);
 		size--;
@@ -90,6 +90,6 @@ void	small_sort(t_node **stack_a, t_node **stack_b)
 		sort_three(stack_a);
 	else if (size == 2)
 		sort_two(stack_a);
-	while (stack_b)
+	while (*stack_b)
 		pa(stack_a, stack_b);
 }
