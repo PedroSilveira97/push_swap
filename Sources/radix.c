@@ -6,7 +6,7 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 15:45:45 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/24 22:28:24 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/24 22:56:15 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,10 +97,10 @@ void	push_back_desc(t_node **stack_a, t_node **stack_b)
 	int	pos;
 	int	size;
 
-	while (stack_b)
+	while (*stack_b)
 	{
 		pos = pos_of_max(*stack_b);
-		size = stack_size(stack_a);
+		size = stack_size(*stack_b);
 		if (pos <= size / 2)
 		{
 			while (pos-- > 0)
