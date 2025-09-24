@@ -6,7 +6,7 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 15:45:45 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/17 20:27:46 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/24 22:28:24 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int	max_rank(t_node	*head)
 	return (max);
 }
 
-void	radix_sort(t_node **stack_a, t_node **stack_b)
+void	binary_radix(t_node **stack_a, t_node **stack_b)
 {
 	int	max;
 	int	maxbit;
@@ -67,5 +67,50 @@ void	radix_sort(t_node **stack_a, t_node **stack_b)
 		while (*stack_b)
 			pa(stack_a, stack_b);
 		bit++;
+	}
+}
+
+int	pos_of_max(t_node *stack)
+{
+	int	pos;
+	int	best_pos;
+	int	best_index;
+
+	pos = 0;
+	best_pos = 0;
+	best_index = -1;
+	while (stack)
+	{
+		if (stack->index > best_index)
+		{
+			best_index = stack->index;
+			best_pos = pos;
+		}
+		stack = stack->next;
+		pos++;
+	}
+	return (best_pos);
+}
+
+void	push_back_desc(t_node **stack_a, t_node **stack_b)
+{
+	int	pos;
+	int	size;
+
+	while (stack_b)
+	{
+		pos = pos_of_max(*stack_b);
+		size = stack_size(stack_a);
+		if (pos <= size / 2)
+		{
+			while (pos-- > 0)
+				rb(stack_b);
+		}
+		else
+		{
+			while (pos++ < size)
+				rrb(stack_b);
+		}
+		pa(stack_a, stack_b);
 	}
 }

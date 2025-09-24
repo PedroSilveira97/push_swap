@@ -13,7 +13,8 @@ SRC =	$(SRC_DIR)/Sources/dispatcher.c \
 		$(SRC_DIR)/Sources/small_sort.c \
 		$(SRC_DIR)/Sources/stack_utils_1.c \
 		$(SRC_DIR)/Sources/stack_utils_2.c \
-		$(SRC_DIR)/Sources/swap.c
+		$(SRC_DIR)/Sources/swap.c \
+		$(SRC_DIR)/Sources/radix_2.c
 
 OBJ = $(SRC:.c=.o)
 

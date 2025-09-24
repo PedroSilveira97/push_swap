@@ -6,7 +6,7 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 15:39:44 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/18 14:00:55 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/24 22:32:39 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,10 @@ void	sa(t_node **stack);
 void	sb(t_node **stack);
 void	ss(t_node **stack_a, t_node **stack_b);
 void	appending(int argc, char **argv, t_node **node);
+void	binary_radix(t_node **stack_a, t_node **stack_b);
 int		pos_of_min(t_node *stack_a, int size);
+int		pos_of_max(t_node *stack);
+void	push_back_desc(t_node **stack_a, t_node **stack_b);
+void	radix_sort(t_node **stack_a, t_node **stack_b);
 
 #endif
