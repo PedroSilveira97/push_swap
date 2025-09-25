@@ -6,7 +6,7 @@
 /*   By: ptavares <ptavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 15:39:44 by ptavares          #+#    #+#             */
-/*   Updated: 2025/09/24 23:10:24 by ptavares         ###   ########.fr       */
+/*   Updated: 2025/09/25 07:01:04 by ptavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,5 @@ int		pos_of_min(t_node *stack_a, int size);
 int		pos_of_max(t_node *stack);
 void	push_back_desc(t_node **stack_a, t_node **stack_b);
 void	chunk_sort(t_node **stack_a, t_node **stack_b, int chunk);
-
 
 #endif
